@@ -1,0 +1,4 @@
+# https://github.com/rgevaert/grok-patterns
+USER_AGENT User-Agent|X-Mailer
+RECIPIENTS <%{EMAILADDRESS:recipient}>(,<%{GREEDYDATA:recipientlist}>)?
+AMAVISDNEW \(%{DATA:amavisdid}\) %{DATA:action} %{DATA:ccat}, %{GREEDYDATA:policybank} \[%{IP:relayip}\] <(%{EMAILADDRESS:from})?> -> %{RECIPIENTS:recipients}, Queue-ID: %{DATA:qeueueid}, Message-ID: <%{DATA:messageid}>,( mail_id: %{DATA:mail_id},)? Hits: %{NUMBER:hits:float}, size: %{NUMBER:size:int},( queued_as: %{QUEUEID:qid},)? %{POSINT:elapsedtime} ms
